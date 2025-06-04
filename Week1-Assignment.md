@@ -1,70 +1,59 @@
-# 🗄️ Week 1: MongoDB – Data Layer Fundamentals and Advanced Techniques
+# MongoDB Bookstore Project
 
-## 🚀 Objective
-Learn the fundamentals of MongoDB, including installation, creating collections, performing CRUD operations, using aggregation pipelines, and implementing indexing for performance optimization.
+## Overview
 
-## 📂 Tasks
+This project demonstrates basic CRUD operations, advanced queries, aggregation pipelines, and indexing in MongoDB using a bookstore database.
 
-### Task 1: MongoDB Setup
-- Install MongoDB on your local machine OR set up a free MongoDB Atlas cluster
-- Create a new database called `plp_bookstore`
-- Create a collection called `books`
+## Setup
 
-### Task 2: Basic CRUD Operations
-- Use the provided `insert_books.js` script to insert at least 10 book documents into your collection
-- Each book should have the following fields:
-  - `title` (string)
-  - `author` (string)
-  - `genre` (string)
-  - `published_year` (number)
-  - `price` (number)
-  - `in_stock` (boolean)
-  - `pages` (number)
-  - `publisher` (string)
-- Write MongoDB queries to:
-  - Find all books in a specific genre
-  - Find books published after a certain year
-  - Find books by a specific author
-  - Update the price of a specific book
-  - Delete a book by its title
+1.  **Install MongoDB:**
 
-### Task 3: Advanced Queries
-- Write a query to find books that are both in stock and published after 2010
-- Use projection to return only the title, author, and price fields in your queries
-- Implement sorting to display books by price (both ascending and descending)
-- Use the `limit` and `skip` methods to implement pagination (5 books per page)
+    *   Install MongoDB Community Edition from [https://www.mongodb.com/try/download/community](https://www.mongodb.com/try/download/community) or set up a MongoDB Atlas account at [https://www.mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas).
+2.  **Install Node.js:**
 
-### Task 4: Aggregation Pipeline
-- Create an aggregation pipeline to calculate the average price of books by genre
-- Create an aggregation pipeline to find the author with the most books in the collection
-- Implement a pipeline that groups books by publication decade and counts them
+    *   Download and install Node.js from [https://nodejs.org/](https://nodejs.org/).
+3.  **Create Project Directory:**
 
-### Task 5: Indexing
-- Create an index on the `title` field for faster searches
-- Create a compound index on `author` and `published_year`
-- Use the `explain()` method to demonstrate the performance improvement with your indexes
+    *   Create a new directory for the project.
+    *   Create the following files: `insert_books.js`, `queries.js`, and `README.md`.
+4.  **Install MongoDB Driver:**
 
-## 🧪 Expected Outcome
-- A functioning MongoDB database with properly structured data
-- A set of MongoDB queries that demonstrate your understanding of CRUD operations
-- Advanced queries showing filtering, projection, and sorting capabilities
-- Aggregation pipelines that transform and analyze the data
-- Properly implemented indexes with performance analysis
+    *   Navigate to your project directory in the terminal and run:
 
-## 🛠️ Setup
-1. Install MongoDB Community Edition or set up a MongoDB Atlas account
-2. Use the provided `insert_books.js` script to populate your database
-3. Use MongoDB Shell (mongosh) or MongoDB Compass to interact with your database
-4. Save all your queries in a file called `queries.js`
+        ```bash
+        npm install mongodb
+        ```
 
-## ✅ Submission Instructions
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Add the following files to your repository:
-   - `insert_books.js` (with your modifications if any)
-   - `queries.js` (containing all your MongoDB queries)
-   - A `README.md` file explaining how to run your scripts
-   - A screenshot of your MongoDB Compass or Atlas showing your collections and sample data
-4. Commit and push your changes to GitHub
-5. Your submission will be automatically graded based on the criteria in the autograding configuration
-6. The instructor will review your submission after the autograding is complete 
+## Usage
+
+### 1. Populate the Database
+
+*   Run the `insert_books.js` script to insert sample data into the `plp_bookstore` database and the `books` collection:
+
+    ```bash
+    node insert_books.js
+    ```
+
+### 2. Execute Queries
+
+*   Run the `queries.js` script to execute various MongoDB queries:
+
+    ```bash
+    node queries.js
+    ```
+
+## Scripts
+
+*   `insert_books.js`: Inserts sample book data into the `books` collection.
+*   `queries.js`: Contains MongoDB queries for CRUD operations, advanced queries, aggregation pipelines, and indexing.
+
+## Screenshots
+
+*   ![screenshot of Atlas showing the `books` collection and sample data.](./image.png)
+
+
+## Notes
+
+*   Make sure MongoDB is running locally on the default port (27017) or update the connection URI in the scripts accordingly.
+*   The `queries.js` script includes examples of indexing and the `explain()` method to demonstrate performance improvements.
+*   Adjust the `pageNumber` variable in `queries.js` to navigate through paginated results.
